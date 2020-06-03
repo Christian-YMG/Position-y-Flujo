@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Position y Flujo</h1>
+
+    <p><center>En HTML existen etiquetas en bloque y etiquetas en línea</center></p>
+
+    <section class="section_etiquetas">
+        <article class="article_etiquetas">
+            <h2>Ejemplos de etiquetas en Bloque:</h2>
+
+                <ol class="container_list">
+                    <li>div</li>
+                    <li>section</li>
+                    <li>article</li>
+                    <li>nav</li>
+                    <li>p</li>
+                </ol>
+
+                <div class="container_ejemplos">
+                    <div class="etiqueta">Soy una etiqueta div.</div>
+                    <article class="etiqueta">Soy una etiqueta article.</article>
+                    <nav class="etiqueta">Soy una etiqueta nav.</nav>
+                    <section class="etiqueta">Soy una etiqueta section.</section>
+                </div>
+
+                <p>Si nos detenemos a observar nuestro contenido sale uno debajo de otro.</p>
+                <p>Esto es por que las etiquetas en bloque utilizan todo el ancho disponible de su padre.</p>
+                <p>Las etiqeutas en bloque tienen por defecto display: block;</p>
+        </article>
+    
+        <article class="article_etiquetas">
+            <h2>Ejemplos de etiquetas en Línea:</h2>
+
+                <ol class="container_list">
+                    <li>span</li>
+                    <li>big</li>
+                    <li>small</li>
+                    <li>code</li>
+                    <li>a</li>
+                </ol>
+
+                <div class="container_ejemplos">
+                    <span class="etiqueta">Soy una etiqueta span.</span>
+                    <big class="etiqueta">Soy una etiqueta big.</big>
+                    <small class="etiqueta">Soy una etiqueta small.</small>
+                    <code class="etiqueta">Soy una etiqueta code.</code>
+                    <a class="etiqueta" href="#">Soy una etiqueta a.</a>
+                </div>
+
+                <p>Las etiquetas en línea utilizan el ancho que el texto requiere por eso van una despué de otra.</p>
+                <p>Las etiqeutas en bloque tienen por defecto display: inline;</p>
+                <p>A diferencia de las etiquetas en bloque que utilizan todo el ancho disponible.</p>
+        </article>
+    </section>
+
+    <h1><center>Position</center></h1>
+    <section class="section_etiquetas">
+        <article class="article_etiquetas">
+            <p>Nos centraremos en los position Absolute y Relative.</p>
+            <p>Para poder manejar este posicionamiento necesitamo de las propiedades offset:</p>
+            <ul class="container_list">
+                <li>top</li>
+                <li>right</li>
+                <li>bottom</li>
+                <li>left</li>
+            </ul>
+            <p>Las cuales nos ayudan de referencia para mover nuestro elemento.</p>
+
+            <h2>Position Absolute</h2>
+                <p>Pierde su posición en el flujo y no reserva su espacio.</p>
+                <p>Si tenia dimensiones fijas se mantienen, pero si tenia posiciones automaticas estas se ajustaran a su contenido.</p>
+                <p>Su referencia es su ancestro posicionado más cercano.</p>
+
+                <h3>Position abolute:</h3>
+                <div class="caja1">
+                    <div class="subcaja">Soy la caja 1</div>
+                    <div class="subcaja n1">Soy la caja 2</div>
+                </div>
+                <p>"Soy la caja 2 tiene position abolute"</p>
+                <p>Como observamos position absolute elimina las propiedades automaticas 
+                    como el width y lo sujeta al texto.
+                </p>
+                <div class="caja1">
+                    <div class="subcaja n2">Soy la caja 1</div>
+                    <div class="subcaja">Soy la caja 2</div>
+                </div>
+                <p>Ahora "Soy la caja 1" tiene position absolute</p>
+                <p>Y tiene 22px en top lo que quiere decir que esa sera la distancia entre top y nuestro elemento</p>
+                <p>También podemos observar que pierde su flujo ya que "Soy la caja 2" va después de "Soy la caja1"
+                    pero position absolute lo rompe y es como si "Soy la caja 1" no existiera en el layout, ya que elimina el espacio que deberia de estar usando dentro del layout.</p>
+
+                    <h2>Position Relative</h2>
+                        <p>Su referencia es su pisiocion inicial</p>
+                        <p>No modifica en nada su layout</p>
+                        <p>Al mover el elemento con las propiedades offset reserva el espacio que debe de utilizar</p>
+                    <h3>Position Relative:</h3>
+                    <div class="caja1">
+                        <div class="subcaja">Soy la caja 1</div>
+                        <div class="subcaja c1">Soy la caja 2</div>
+                    </div>
+                    <p>"Soy la caja 2 tiene position relative" pero no tiene las propiedades offset así que no</p>
+                    <p>Y position Relative no cambia en nada el layout a diferencia de Anolute</p>
+                    <div class="caja1">
+                        <div class="subcaja c2">Soy la caja 1</div>
+                        <div class="subcaja">Soy la caja 2</div>
+                    </div>
+                    <p>Ahora "Soy la caja 1" tiene position relative</p>
+                    <p>Y tiene 32px en top y 50px en left lo que quiere decir que esa sera la distancia entre top y nuestro elemento y left y nuestro elemento respectivamente.</p>
+                    <p>También obeservamos que no pierde su espacio dentro del flujo a diferencia de position Absolute ya que "Soy la caja 2" no se recorre hacia arriba</p>
+        </article>
+    </section>
+
+</body>
+</html>
